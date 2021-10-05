@@ -1,5 +1,3 @@
-const gender = document.getElementById("#gender").value;
-console.log(gender);
 function formSubmit(){
     var formData = getFormData();
     insertData(formData);
@@ -13,13 +11,15 @@ function getFormData(){
     formData['address'] = document.getElementById("address").value;
     formData['pincode'] = document.getElementById("pinCode").value;
     formData['gender'] = document.getElementById("gender").value;
+    getRadioValue(formData['gender']);
     formData['food'] = document.getElementById("food").value;
+    getRadioValue(formData['food']);
     formData['state'] = document.getElementById("state").value;
     formData['country'] = document.getElementById("country").value;
     console.log(formData)
     return formData;
 }
-getFormData();
+// getFormData();
 
 function insertData(data){
     var table = document.getElementById("list").getElementsByTagName("tbody")[0];
@@ -52,3 +52,26 @@ function reset(){
     document.getElementById("state").value = "";
     document.getElementById("country").value = "";
 }
+
+function getRadioValue(radioName){
+    const getValue = document.getElementById("gender");
+    getValue.value = radioName;
+    console.log(getValue);
+}
+
+function getCheckboxValue(checkboxName){
+    const getValue = document.getElementById("food");
+    getValue.value = checkboxName;
+    console.log(checkboxName);
+}
+
+// function getCheckboxValue(checkboxName){
+//     const getValue = document.getElementById("food");
+//     if(getValue.length == 2){
+//        getValue.value = checkboxName;
+//        console.log(getValue);
+//     }
+//     else{
+//         console.log("Select Atleast Two");
+//     }
+// }

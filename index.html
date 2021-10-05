@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <section id="form-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 form">
+                       <form onsubmit="event.preventDefault();formSubmit();">
+                          <div class="form-group">
+                              <label>First Name</label><br>
+                              <input type="text" name="firstname" id="firstName" class="form-control" placeholder="Enter you first name"> 
+                          </div>
+                          <div class="form-group">
+                            <label>Last Name</label><br>
+                            <input type="text" name="lastname" id="lastName" class="form-control" placeholder="Enter you last name"> 
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label><br>
+                            <input type="text" name="address" id="address" class="form-control" placeholder="Enter you Address"> 
+                        </div>
+                        <div class="form-group">
+                            <label>Pincode</label><br>
+                            <input type="number" name="pincode" id="pinCode" class="form-control" placeholder="Enter you pincode">
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label><br>
+                            <input type="radio" name="gender" value="male" id="gender" class="form-control"><span>Male</span>
+                            <input type="radio" name="gender" value="female" id="gender" class="form-control">Female
+                            <input type="radio" name="gender" value="other" id="gender" class="form-control">Other
+                        </div>
+                        <div class="form-group">
+                            <label>Choice of food</label><br>
+                            <input type="checkbox" name="food" value="Pizza" id="food" class="form-control">Pizza
+                            <input type="checkbox" name="food" value="Pasta" id="food" class="form-control">Pasta
+                            <input type="checkbox" name="food" value="Hamburger" id="food" class="form-control">Hamburger
+                            <input type="checkbox" name="food" value="Soup" id="food" class="form-control">Soup
+                            <input type="checkbox" name="food" value="Salad" id="food" class="form-control">Salad
+                        </div>
+                        <div class="form-group">
+                            <label>State</label><br>
+                            <input type="text" name="state" id="state" class="form-control" placeholder="Enter you state"> 
+                        </div>
+                        <div class="form-group">
+                            <label>Country</label><br>
+                            <input type="text" name="country" id="country" class="form-control" placeholder="Enter you country"> 
+                        </div>
+                        <div class="form-group">
+                           <button class="submitBtn">Submit</button>
+                        </div>
+                       </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <table id="list">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Address</th>
+                                <th>Pincode</th>
+                                <th>Gender</th>
+                                <th>Choice od Food</th>
+                                <th>State</th>
+                                <th>Country</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <script src="script.js" async defer></script>
+    </body>
+</html>

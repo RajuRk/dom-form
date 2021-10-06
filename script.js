@@ -1,77 +1,75 @@
-function formSubmit(){
-    var formData = getFormData();
-    insertData(formData);
+const firstName = document.getElementById("firstName");
+const lastName = document.getElementById("lastName");
+const address = document.getElementById("address");
+const pinCode = document.getElementById("pinCode");
+const gender = document.getElementById("gender");
+const food =  document.getElementById("food");
+const state = document.getElementById("state");
+const country = document.getElementById("country");
+const submitBtn = document.querySelector(".submitBtn");
+
+const checkRadio = () => {
+    const radio = document.querySelectorAll("#gender");
+    var radioValue;
+    for(var i=0; i<radio.length; i++) {
+        if(radio[i].checked){
+            radioValue = radio[i].value;
+            console.log(radioValue);
+            return radioValue;
+        }
+    }
+    
+}
+
+const checkCheckBox = () => {
+    var checkBox = document.querySelectorAll("#food");
+    var getCheckValue;
+    for(var i=0; i<checkBox.length; i++){
+        if(checkBox[i].checked){
+            getCheckValue = checkBox[i].value;
+            return getCheckValue;
+        }
+    }
+}
+
+submitBtn.addEventListener("click", () => {
+    getData();
     reset();
-}
 
-function getFormData(){
-    var formData = {};
-    formData['firstname'] = document.getElementById("firstName").value;
-    formData['lastname'] = document.getElementById("lastName").value;
-    formData['address'] = document.getElementById("address").value;
-    formData['pincode'] = document.getElementById("pinCode").value;
-    formData['gender'] = document.getElementById("gender").value;
-    getRadioValue(formData['gender']);
-    formData['food'] = document.getElementById("food").value;
-    getRadioValue(formData['food']);
-    formData['state'] = document.getElementById("state").value;
-    formData['country'] = document.getElementById("country").value;
-    console.log(formData)
-    return formData;
-}
-// getFormData();
+});
 
-function insertData(data){
+const getData = () =>{
     var table = document.getElementById("list").getElementsByTagName("tbody")[0];
-    var newRow = table.insertRow(table.length);
-    cell1 = newRow.insertCell(0);
-    cell1.innerHTML = data.firstname;
-    cell2 = newRow.insertCell(1);
-    cell2.innerHTML = data.lastname;
-    cell3 = newRow.insertCell(2);
-    cell3.innerHTML = data.address;
-    cell4 = newRow.insertCell(3);
-    cell4.innerHTML = data.pincode;
-    cell5 = newRow.insertCell(4);
-    cell5.innerHTML = data.gender;
-    cell6 = newRow.insertCell(5);
-    cell6.innerHTML = data.food;
-    cell7 = newRow.insertCell(6);
-    cell7.innerHTML = data.state;
-    cell8 = newRow.insertCell(7);
-    cell8.innerHTML = data.country;
-}
+    const formData = {};
+    formData["firstName"] = firstName.value;
+    formData["lastName"] = lastName.value;
+    formData["address"] = address.value;
+    formData["pinCode"] = pinCode.value;
+    formData["gender"] = `${checkRadio()}`;
+    formData["food"] = `${checkCheckBox()}`;
+    formData["state"] = state.value;
+    formData["country"] = country.value;
+    console.log(formData)
+    table.innerHTML += `<tr>
+                        <td>${formData.firstName}</td>
+                        <td>${formData.lastName}</td>
+                        <td>${formData.address}</td>
+                        <td>${formData.pinCode}</td>
+                        <td>${formData.gender}</td>
+                        <td>${formData.food}</td>
+                        <td>${formData.state}</td>
+                        <td>${formData.country}</td>
+                      </tr>`;
+       
+};
 
-function reset(){
-    document.getElementById("firstName").value = "";
-    document.getElementById("lastName").value = "";
-    document.getElementById("address").value = "";
-    document.getElementById("pinCode").value = "";
-    document.getElementById("gender").value = "";
-    document.getElementById("food").value = "";
-    document.getElementById("state").value = "";
-    document.getElementById("country").value = "";
+const reset = () =>{
+    firstName.value = "";
+    lastName.value = "";
+    address.value = "";
+    pinCode.value = "";
+    gender.value = "";
+    food.value = "";
+    state.value = "";
+    country.value = "";
 }
-
-function getRadioValue(radioName){
-    const getValue = document.getElementById("gender");
-    getValue.value = radioName;
-    console.log(getValue);
-}
-
-function getCheckboxValue(checkboxName){
-    const getValue = document.getElementById("food");
-    getValue.value = checkboxName;
-    console.log(checkboxName);
-}
-
-// function getCheckboxValue(checkboxName){
-//     const getValue = document.getElementById("food");
-//     if(getValue.length == 2){
-//        getValue.value = checkboxName;
-//        console.log(getValue);
-//     }
-//     else{
-//         console.log("Select Atleast Two");
-//     }
-// }

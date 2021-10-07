@@ -16,52 +16,52 @@
                        <div class="title">
                            <h1>DOM Manipulation with Forms</h1>
                        </div>
-                       <form onsubmit="event.preventDefault()">
-                          
+                       <form onsubmit="event.preventDefault();submitBtn();" aria-label="required">
+                          <span id="error"></span>
                           <div class="form-group">
                               <label>First Name</label><br>
-                              <input type="text" name="firstname" id="firstName" class="form-control" placeholder="Enter you first name"> 
-                              <span id="error"></span>
+                              <input type="text" name="firstname" id="firstName" class="form-control" placeholder="Enter you first name" required> 
+                               
                           </div>
                           <div class="form-group">
                             <label>Last Name</label><br>
-                            <input type="text" name="lastname" id="lastName" class="form-control" placeholder="Enter you last name">
-                            <span id="error"></span>
+                            <input type="text" name="lastname" id="lastName" class="form-control" placeholder="Enter you last name" required>
+                             
                         </div>
                         <div class="form-group">
                             <label>Address</label><br>
-                            <input type="text" name="address" id="address" class="form-control" placeholder="Enter you Address">
-                            <span id="error"></span>
+                            <input type="text" name="address" id="address" class="form-control" placeholder="Enter you Address" required>
+                             
                         </div>
                         <div class="form-group">
                             <label>Pincode</label><br>
-                            <input type="number" name="pincode" id="pinCode" class="form-control" placeholder="Enter you pincode">
-                            <span id="error"></span>
+                            <input type="number" name="pincode" id="pinCode" class="form-control" placeholder="Enter you pincode" required>
+                             
                         </div>
                         <div class="form-group radio">
                             <label>Gender</label><br>
-                            <input type="radio" name="gender" value="male" id="gender" class="form-control" onclick="checkRadio()">Male
-                            <input type="radio" name="gender" value="female" id="gender" class="form-control" onclick="checkRadio()">Female
-                            <input type="radio" name="gender" value="other" id="gender" class="form-control" onclick="checkRadio()">Other
+                            <input type="radio" name="gender" value="male" id="gender" class="form-control" required>Male
+                            <input type="radio" name="gender" value="female" id="gender" class="form-control" required>Female
+                            <input type="radio" name="gender" value="other" id="gender" class="form-control" required>Other
                         </div>
                         <div class="form-group">
                             <label>Choice of food</label><br>
-                            <input type="checkbox" name="food" value="Pizza" id="food" class="form-control" onclick="checkCheckBox()">Pizza
-                            <input type="checkbox" name="food" value="Pasta" id="food" class="form-control" onclick="checkCheckBox()">Pasta
-                            <input type="checkbox" name="food" value="Hamburger" id="food" class="form-control" onclick="checkCheckBox()">Hamburger
-                            <input type="checkbox" name="food" value="Soup" id="food" class="form-control" onclick="checkCheckBox()">Soup
-                            <input type="checkbox" name="food" value="Salad" id="food" class="form-control" onclick="checkCheckBox()">Salad
+                            <input type="checkbox" name="food" value="Pizza" id="food" class="form-control">Pizza
+                            <input type="checkbox" name="food" value="Pasta" id="food" class="form-control">Pasta
+                            <input type="checkbox" name="food" value="Hamburger" id="food" class="form-control">Hamburger
+                            <input type="checkbox" name="food" value="Soup" id="food" class="form-control">Soup
+                            <input type="checkbox" name="food" value="Salad" id="food" class="form-control">Salad
                         </div>
                         <div class="form-group">
                             <label>State</label><br>
-                            <input type="text" name="state" id="state" class="form-control" placeholder="Enter you state"> 
+                            <input type="text" name="state" id="state" class="form-control" placeholder="Enter you state" required> 
                         </div>
                         <div class="form-group">
                             <label>Country</label><br>
-                            <input type="text" name="country" id="country" class="form-control" placeholder="Enter you country"> 
+                            <input type="text" name="country" id="country" class="form-control" placeholder="Enter you country" required> 
                         </div>
                         <div class="form-group">
-                           <button class="submitBtn">Submit</button>
+                           <input type="submit" value ="Submit"class="submitBtn">
                         </div>
                        </form>
                     </div>

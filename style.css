@@ -4,7 +4,7 @@ body{
     font-family: 'Roboto', sans-serif;
     background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
     background-size: cover;
-    height: 100vh;
+    height: 200vh;
     color: #ffffff;
 }
 table,
@@ -54,4 +54,8 @@ form{
     border: 1px solid #fff;
     padding: 20px;
     background-color: #7d0a0a2e;
+}
+#error{
+   color: red;
+   font-weight: 600;
 }

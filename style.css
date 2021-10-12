@@ -36,7 +36,7 @@ input[type="radio"],
 input[type="checkbox"]{
     margin: 7px 7px;
 }
-button{
+input[type="submit"]{
     color: #fff;
     background-color: #0089bf;
     padding: 8px 15px;

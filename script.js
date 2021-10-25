@@ -38,7 +38,7 @@ const getData = () =>{
     formData["address"] = address.value;
     formData["pinCode"] = pinCode.value;
     formData["gender"] = `${checkValue(gender)}`;
-    formData["food"] = `${checkValue(food)}`;
+    formData["food"] = `${validateCheckBox(food)}`;
     formData["state"] = state.value;
     formData["country"] = country.value;
      
@@ -64,4 +64,27 @@ const reset = () =>{
     gender.value = "";
     food.value = "";
     
+}
+
+let checked = [];
+let foods = ["pizza", "pasta", "burger", "soup", "salad"];
+
+function validateCheckBox(name) {
+  if (!checked.includes(name)) {
+    checked.push(name);
+    if (checked.length == 2) {
+      foods.forEach((food) => {
+        if (!checked.includes(food)) {
+          document.getElementById(food).disabled = true;
+        }
+      });
+    }
+  } else {
+    checked = checked.filter((food) => food != name);
+    if (checked.length < 2) {
+      foods.forEach((food) => {
+        document.getElementById(food).disabled = false;
+      });
+    }
+  }
 }
